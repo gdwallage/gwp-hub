@@ -229,3 +229,24 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* Genre Brand Logo & Icon Enhancements */
+.genre-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 6px;
+    display: inline-block;
+}
+
+.card-logo-container {
+    margin-bottom: 12px;
+}
+
+.genre-logo-img {
+    max-height: 48px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
