@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  web:
+    image: nginx:alpine
+    volumes:
+      - /opt/docker-stacks/gwp-hub/html:/usr/share/nginx/html:ro
+      - /opt/docker-stacks/gwp-hub/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - zone_dmz
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 64M
+      placement:
+        constraints:
+          - node.hostname == ubuntu-server
+
+networks:
+  zone_dmz:
+    external: true
